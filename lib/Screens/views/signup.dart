@@ -17,33 +17,6 @@ class _SignupPageState extends State<SignupPage> {
   bool _sucsees;
   String _messsage;
 
-  /*void _register() async {
-    try {
-      final UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-              email: _emailcontroller.text, password: _passcontroller.text);
-      final User user = userCredential.user;
-      if (user != null) {
-        setState(() {
-          _messsage = "Başarıyla Kayıt Olundu.";
-          _sucsees = true;
-        });
-      } else {
-        setState(() {
-          _messsage = "Bir Hata Oluştu!";
-          _sucsees = false;
-        });
-      }
-    } on FirebaseAuthException catch (err) {
-      setState(() {
-        _messsage = "Bir Hata Oluştu!";
-        _sucsees = false;
-      });
-    } catch (e) {
-      print(e);
-    }
-  }*/
-
   @override
   void dispose() {
     _emailController.dispose();
@@ -66,7 +39,7 @@ class _SignupPageState extends State<SignupPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  height: MediaQuery.of(context).size.height / 4,
+                  height: MediaQuery.of(context).size.height / 3,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage("assets/images/register.png"))),
