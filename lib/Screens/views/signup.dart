@@ -78,8 +78,8 @@ class _SignupPageState extends State<SignupPage> {
                   children: <Widget>[
                     TextFormField(
                       controller: _nameController,
-                      validator: (String mail) {
-                        if (mail.isEmpty) {
+                      validator: (String name) {
+                        if (name.isEmpty) {
                           return "Lütfen İsminizi Yazınız.";
                         }
                       },

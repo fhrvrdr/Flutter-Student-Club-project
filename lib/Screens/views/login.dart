@@ -86,6 +86,11 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Okul Numarası",
                           border: OutlineInputBorder(),
                           hintText: "Okul Numarası"),
+                      validator: (String mail) {
+                        if (mail.isEmpty) {
+                          return "Lütfen İsminizi Yazınız.";
+                        }
+                      },
                     ),
                     SizedBox(
                       height: 20,
@@ -98,6 +103,11 @@ class _LoginPageState extends State<LoginPage> {
                         labelText: "Şifre",
                         border: OutlineInputBorder(),
                       ),
+                      validator: (String password) {
+                        if (password.isEmpty) {
+                          return "Lütfen Bir Şifre Yazınız.";
+                        }
+                      },
                     ),
                     SizedBox(
                       height: 20,
