@@ -137,6 +137,9 @@ class _SignupPageState extends State<SignupPage> {
                         color: Colors.blue,
                       ),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
                     MaterialButton(
                       minWidth: double.infinity,
                       height: 60,
@@ -152,10 +155,17 @@ class _SignupPageState extends State<SignupPage> {
                                       "@student.beykent.edu.tr",
                                   _passController.text)
                               .then((value) {
-                            return Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
+                            if (value != null) {
+                              return Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginPage()));
+                            } else {
+                              setState(() {
+                                _messsage = "Bir Hata Oluştu!";
+                                _sucsees = false;
+                              });
+                            }
                           });
                         }
                       },

@@ -7,9 +7,14 @@ class AuthService {
 
   //giriş yap fonksiyonu
   Future<User> signIn(String email, String password) async {
-    var user = await _auth.signInWithEmailAndPassword(
-        email: email, password: password);
-    return user.user;
+    try {
+      var user = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+
+      return user.user;
+    } catch (e) {
+      print(e);
+    }
   }
 
   //çıkış yap fonksiyonu
@@ -24,13 +29,20 @@ class AuthService {
 
   //kayıt ol fonksiyonu
   Future<User> createPerson(String name, String email, String password) async {
-    var user = await _auth.createUserWithEmailAndPassword(
-        email: email, password: password);
+    try {
+      var user = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
 
-    await _firestore.collection("Person").doc(user.user.uid).set(
-        {'userName': name, 'email': email, 'clubs': FieldValue.arrayUnion([])});
+      await _firestore.collection("Person").doc(user.user.uid).set({
+        'userName': name,
+        'email': email,
+        'clubs': FieldValue.arrayUnion([])
+      });
 
-    return user.user;
+      return user.user;
+    } catch (e) {
+      print(e);
+    }
   }
 
   Future<User> updatePerson(String name) async {

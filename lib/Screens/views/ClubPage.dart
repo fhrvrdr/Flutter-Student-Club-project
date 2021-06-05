@@ -15,6 +15,10 @@ class _ClubPageState extends State<ClubPage> {
   ListService _listService = ListService();
   CollectionReference clubs = FirebaseFirestore.instance.collection('clubs');
 
+  bool _sucsees;
+  String _messsage;
+  String _message2;
+
   @override
   Widget build(BuildContext context) {
     final String docrefid = widget.ref.id;
@@ -116,6 +120,34 @@ class _ClubPageState extends State<ClubPage> {
                     },
                   ),
                   SizedBox(height: 20),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        _sucsees == null ? '' : _messsage ?? '',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        _sucsees == null ? '' : _message2 ?? '',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      )
+                    ],
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -124,6 +156,12 @@ class _ClubPageState extends State<ClubPage> {
                         height: 50,
                         onPressed: () {
                           _listService.addClub(docref);
+                          setState(() {
+                            _messsage = "İşlem Başarıyla Gerçekleşti! ";
+                            _message2 =
+                                "Lütfen Anasayfaya dönüp sayfayı yenileyin !";
+                            _sucsees = true;
+                          });
                         },
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50),
@@ -139,7 +177,7 @@ class _ClubPageState extends State<ClubPage> {
                       ),
                       SizedBox(height: 20),
                     ],
-                  )
+                  ),
                 ],
               )
             ],

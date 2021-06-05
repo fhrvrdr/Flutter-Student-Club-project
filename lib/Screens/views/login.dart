@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_club_project/Screens/views/HomeScreen.dart';
 import 'package:flutter_club_project/Screens/views/signup.dart';
@@ -16,36 +17,6 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _sucsees;
   String _messsage;
-
-  /*void _login() async {
-    try {
-      final UserCredential userCredential =
-          await _auth.signInWithEmailAndPassword(
-              email: _emailcontroller.text, password: _passcontroller.text);
-
-      final User user = userCredential.user;
-      if (user != null) {
-        setState(() {
-          _messsage = "Başarıyla Giriş Yapıldı";
-          _sucsees = true;
-        });
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
-      } else {
-        setState(() {
-          _messsage = "Bir Hata Oluştu!";
-          _sucsees = false;
-        });
-      }
-    } on FirebaseAuthException catch (err) {
-      setState(() {
-        _messsage = "Bir Hata Oluştu!";
-        _sucsees = false;
-      });
-    } catch (e) {
-      print(e);
-    }
-  }*/
 
   @override
   void dispose() {
@@ -128,17 +99,26 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(50),
                           side: BorderSide(color: Colors.black26)),
                       onPressed: () {
-                        _authService
-                            .signIn(
-                                _emailController.text +
-                                    "@student.beykent.edu.tr",
-                                _passController.text)
-                            .then((value) {
-                          return Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen()));
-                        });
+                        if (_formkey.currentState.validate()) {
+                          _authService
+                              .signIn(
+                                  _emailController.text +
+                                      "@student.beykent.edu.tr",
+                                  _passController.text)
+                              .then((value) {
+                            if (value != null) {
+                              return Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomeScreen()));
+                            } else {
+                              setState(() {
+                                _messsage = "Bir Hata Oluştu!";
+                                _sucsees = false;
+                              });
+                            }
+                          });
+                        }
                       },
                       color: Colors.blue,
                       child: Text(
