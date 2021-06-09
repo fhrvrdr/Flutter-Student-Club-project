@@ -20,7 +20,6 @@ class _ChatPageState extends State<ChatPage> {
   Widget chatMessageTile(
     String mesaj,
     bool sendbyme,
-    /*String sender*/
   ) {
     return Row(
       mainAxisAlignment:
@@ -40,16 +39,6 @@ class _ChatPageState extends State<ChatPage> {
                 ),
               ),
             ),
-            /*FutureBuilder(
-              future: FirebaseFirestore.instance
-                  .collection('Person')
-                  .doc(sender)
-                  .get(),
-              builder: (context, snapshot) {
-                Map<String, dynamic> data = snapshot.data.data();
-                return Text("${data['userName']}");
-              },
-            ),*/
           ],
         ),
       ],

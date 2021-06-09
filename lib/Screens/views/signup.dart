@@ -129,7 +129,7 @@ class _SignupPageState extends State<SignupPage> {
                                   _passController.text)
                               .then((value) {
                             if (value != null) {
-                              return Navigator.push(
+                              return Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => LoginPage()));
