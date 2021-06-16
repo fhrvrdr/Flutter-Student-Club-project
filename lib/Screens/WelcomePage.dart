@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_club_project/Screens/views/login.dart';
-import 'package:flutter_club_project/Screens/views/signup.dart';
+import 'package:flutter_club_project/Screens/login.dart';
+import 'package:flutter_club_project/Screens/signup.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key key}) : super(key: key);

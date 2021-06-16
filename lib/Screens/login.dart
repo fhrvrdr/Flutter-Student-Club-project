@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_club_project/Screens/views/HomeScreen.dart';
-import 'package:flutter_club_project/Screens/views/signup.dart';
+import 'package:flutter_club_project/Screens/HomeScreen.dart';
+import 'package:flutter_club_project/Screens/signup.dart';
 import 'package:flutter_club_project/services/authService.dart';
 
 class LoginPage extends StatefulWidget {

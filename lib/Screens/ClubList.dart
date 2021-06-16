@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_club_project/Screens/views/ClubPage.dart';
+import 'package:flutter_club_project/Screens/ClubPage.dart';
 import 'package:flutter_club_project/services/listService.dart';
 
 class ClubList extends StatefulWidget {

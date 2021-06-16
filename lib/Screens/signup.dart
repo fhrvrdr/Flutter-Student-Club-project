@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_club_project/Screens/views/login.dart';
+import 'package:flutter_club_project/Screens/login.dart';
 import 'package:flutter_club_project/services/authService.dart';
 
 class SignupPage extends StatefulWidget {

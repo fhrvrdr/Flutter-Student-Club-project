@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_club_project/Screens/views/WelcomePage.dart';
+import 'package:flutter_club_project/Screens/WelcomePage.dart';
 import 'package:flutter_club_project/services/authService.dart';
 
 class UserScreen extends StatefulWidget {

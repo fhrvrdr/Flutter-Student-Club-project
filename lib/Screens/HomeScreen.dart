@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_club_project/Screens/views/ChatRooms.dart';
-import 'package:flutter_club_project/Screens/views/ClubList.dart';
-import 'package:flutter_club_project/Screens/views/UserScreen.dart';
+import 'package:flutter_club_project/Screens/ChatRooms.dart';
+import 'package:flutter_club_project/Screens/ClubList.dart';
+import 'package:flutter_club_project/Screens/UserScreen.dart';
 import 'package:flutter_club_project/services/authService.dart';
 import 'package:flutter_club_project/services/listService.dart';
 

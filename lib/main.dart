@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_club_project/Screens/views/HomeScreen.dart';
-import 'package:flutter_club_project/Screens/views/WelcomePage.dart';
+import 'package:flutter_club_project/Screens/WelcomePage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
