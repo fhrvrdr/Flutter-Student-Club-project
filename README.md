@@ -3,4 +3,4 @@
 
 Öğrenci kulüp sistemi.
 
-Not: Servisler Firebase için yazılmıştır.
+Servisler Firebase için yazılmıştır.
